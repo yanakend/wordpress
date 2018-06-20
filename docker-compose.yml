@@ -1,40 +1,38 @@
 version: '3.4'
 
 services:
-   db:
-     image: mysql:5.7
-     volumes:
-       - db_data:/var/lib/mysql
-     restart: always
-     ports:
-       - "8889:3306"
-     env_file: .env
+  db:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    ports:
+      - "8889:3306"
+    env_file: .env
 
-   wordpress:
-     depends_on:
-       - db
-     build: ./devenv
-     ports:
-       - "8888:80"
-     restart: always
-     volumes:
+  wordpress:
+    depends_on:
+      - db
+    build: ./devenv
+    ports:
+      - "8888:80"
+    restart: always
+    volumes:
       - ./my-wordpress/themes:/var/www/html/wp-content/themes
-     env_file: .env
-     volumes:
-        - ./devenv/themes:/var/www/html/wp-content/themes
-        - ./devenv/plugins:/var/www/html/wp-content/plugins
-        - ./devenv/languages:/var/www/html/wp-content/languages
-        - ./tmp/wp-content-uploads:/var/www/html/wp-content/uploads
+    env_file: .env
+    volumes:
+      - ./devenv/themes:/var/www/html/wp-content/themes
+      - ./devenv/plugins:/var/www/html/wp-content/plugins
+      - ./devenv/languages:/var/www/html/wp-content/languages
+      - ./tmp/wp-content-uploads:/var/www/html/wp-content/uploads
 
-   phpmyadmin:
-     image: phpmyadmin/phpmyadmin
-     env_file: .env
-     links:
-       - db
-     ports:
-       - 8887:80
-     volumes:
-       - ./tmp/phpmyadmin-sessions:/sessions
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    env_file: .env
+    ports:
+      - 8887:80
+    volumes:
+      - ./tmp/phpmyadmin-sessions:/sessions
 volumes:
     db_data:
 
