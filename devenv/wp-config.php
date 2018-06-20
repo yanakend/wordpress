@@ -46,14 +46,14 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'c02dbc9064020c990f87b398e295f305f7834092');
-define('SECURE_AUTH_KEY',  'edf2fcde4f0e315d6fe6963ddb38fc9276999d29');
-define('LOGGED_IN_KEY',    '51652b3eff362d1dddcc261a11e109fda7158626');
-define('NONCE_KEY',        '47d3d016329a4d6538970753036e99fbbc2fd877');
-define('AUTH_SALT',        '093298fa244bd3dd586a88c0b5ff868b221a0868');
-define('SECURE_AUTH_SALT', '854792d7ec0689a57963062ea39bd49b714bd526');
-define('LOGGED_IN_SALT',   'd22b4bca8caaadf354866cfe8d7ee230347bdea6');
-define('NONCE_SALT',       '53e69a4dd4b3b7d4b018adf190af61330398f597');
+define('AUTH_KEY',         AUTH_KEY);
+define('SECURE_AUTH_KEY',  SECURE_AUTH_KEY);
+define('LOGGED_IN_KEY',    LOGGED_IN_KEY);
+define('NONCE_KEY',        NONCE_KEY);
+define('AUTH_SALT',        AUTH_SALT);
+define('SECURE_AUTH_SALT', SECURE_AUTH_SALT);
+define('LOGGED_IN_SALT',   LOGGED_IN_SALT);
+define('NONCE_SALT',       NONCE_SALT);
 
 /**#@-*/
 
